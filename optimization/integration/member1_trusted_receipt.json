@@ -1,0 +1,29 @@
+{
+  "receipt_version": "task02-m1-source-receipt/1",
+  "provenance": "Reviewed TASK-02 S0-S8 mapping checkpoint, independently compared with Member1MappingAudit_20260928 raw files on 2026-09-30; this local TASK-02 receipt is outside the audited snapshot",
+  "suite_id": "thu-duc-binh-thanh-v1",
+  "source_run": "cached_context/hcmc/member1-tdbt-v1",
+  "epoch": "2026-09-27T21:00:00+07:00",
+  "catalog_raw_sha256": "8268f653b1bd355672ba094537771206b61c1807e8e83dbdb074ae4ff9ea293a",
+  "catalog_version": "2f034859196a05c864f2681b428ac0428f4253f316f6f4824009a2b58d0a7472",
+  "fixture_raw_sha256": {
+    "S0": "e981e7d8f120fb75ae4390e99757583690548256deb288821f74eee6e35f04f7",
+    "S1": "9d90a0f0d408449ed03ead415a2d55499db460d1380b3cc726899138c68b6196",
+    "S2": "8a448c6805ed4e3a5a8d19aad8479c3a6b3030edd3fcff280b9073215e67565b",
+    "S3": "654ee6f49f05cf68863a226b8cae14d1d95470c03306949a02d84305518d5bd3",
+    "S4": "34b100c4018e4b33aa11d4f49ee2234fb41dedafe305da1f9e3e6db881c94517",
+    "S5": "fa2aec8d1a23cc748058c3faefac5afa80aca55f9b257bd0ca764fc9165334fc",
+    "S6": "8ac25ab353211c211270d953ff772474c730720a8d5a469729e65de356fc26ca",
+    "S7": "c013baa43b2ddb0672fe36a0e0bc132f498c95ac21daeffbfa0a0d4e82c53aea",
+    "S8": "ceb75f9d0fa1d6d1fd60e2e3851cc93bb787b8708fe7b0e224d826a1e13df8e8"
+  },
+  "stage_versions": {
+    "routing": "215fc867426fef6742fd40606e0e5dd72a719f821c310a07442cd0ed42e06acb",
+    "travel": "1e58906b0676f033d9410f7e1a08dca58488ad43b516382ddb31e470be037c0f",
+    "weather-plan": "3092633b0716cdbc2a8a450406e660fe7a0d2b82168554ddb6fa29a46b6db034",
+    "weather": "4038941ccdf51d04d471e31050e5c58da2cf50c089e6a681fd558e1c0f9e17b9",
+    "features": "2446e25826b74f752424f5b2bd82f8a6e2c5358ebcbc2c939e7a024b0fabd4ec",
+    "scenarios": "12222d5c509e8686e926b258accb2226d3f89bda3b696a2436a8e5479677dd76",
+    "qa": "50c670dcc7c1d940383fabb6b471db52e9cdeac12321dbe9d1ace0293b3bad89"
+  }
+}

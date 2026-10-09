@@ -1,0 +1,21 @@
+{
+  "schema_version":"task02-m2-runtime-neutral-vectors/1",
+  "scope":"PORTABLE_PROTOCOL_ONLY; NOT_NATIVE_ACCEPTANCE",
+  "raw_vectors":[
+    {"raw":"{\"a\":1,\"a\":2}","valid":false},
+    {"raw":"{\"x\":NaN}","valid":false},
+    {"raw":"{\"x\":Infinity}","valid":false},
+    {"raw":"{\"x\":1e999}","valid":false},
+    {"raw":"{\"exact\":9007199254740993}","valid":false},
+    {"raw":"{\"exact\":\"9007199254740993\"}","valid":true},
+    {"raw":"{\"n\":1.25,\"coordinates\":[106.7,10.8]}","valid":true}
+  ],
+  "exact_integer_vectors":[
+    {"value":"9223372036854775807","valid":true},
+    {"value":"-9223372036854775808","valid":true},
+    {"value":"9223372036854775808","valid":false},
+    {"value":"-0","valid":false},
+    {"value":"01","valid":false},
+    {"value":true,"valid":false}
+  ]
+}

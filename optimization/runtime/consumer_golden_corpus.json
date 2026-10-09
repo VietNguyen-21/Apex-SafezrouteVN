@@ -1,0 +1,1327 @@
+{
+  "schema_version": "task02-runtime-consumer-golden-corpus/1",
+  "scope": "PORTABLE_SHAPE_SEMANTICS_NOT_SOURCE_AUTHENTICATION",
+  "cases": [
+    {
+      "id": "s2-pristine",
+      "base": "S2",
+      "valid": true
+    },
+    {
+      "id": "s3-pristine",
+      "base": "S3",
+      "valid": true
+    },
+    {
+      "id": "s4-temporal-pristine",
+      "base": "S4",
+      "valid": true
+    },
+    {
+      "id": "route-scalar",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0
+      ],
+      "value": 42
+    },
+    {
+      "id": "actions-object",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions"
+      ],
+      "value": {}
+    },
+    {
+      "id": "action-null",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0
+      ],
+      "value": null
+    },
+    {
+      "id": "unknown-action",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "kind"
+      ],
+      "value": "TELEPORT"
+    },
+    {
+      "id": "array-time",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "start_us"
+      ],
+      "value": []
+    },
+    {
+      "id": "reversed-time",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "end_us"
+      ],
+      "value": 0
+    },
+    {
+      "id": "bad-int64",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "start_us"
+      ],
+      "value": "00"
+    },
+    {
+      "id": "overflow-int64",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "start_us"
+      ],
+      "value": "9223372036854775808"
+    },
+    {
+      "id": "missing-geometry",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "geometry"
+      ],
+      "remove": true
+    },
+    {
+      "id": "single-coordinate",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "geometry"
+      ],
+      "value": [
+        [
+          106,
+          10
+        ]
+      ]
+    },
+    {
+      "id": "bad-wgs84",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "geometry"
+      ],
+      "value": [
+        [
+          181,
+          10
+        ],
+        [
+          106,
+          10
+        ]
+      ]
+    },
+    {
+      "id": "bad-fraction",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "fraction_start_exact"
+      ],
+      "value": "1/0"
+    },
+    {
+      "id": "reversed-progress",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "fraction_end"
+      ],
+      "value": 0
+    },
+    {
+      "id": "bool-distance",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "distance_m"
+      ],
+      "value": true
+    },
+    {
+      "id": "feature-array",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "feature_payload"
+      ],
+      "value": []
+    },
+    {
+      "id": "unknown-basis-field",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "basis",
+        "client_override"
+      ],
+      "value": true
+    },
+    {
+      "id": "bad-return",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "return_us"
+      ],
+      "value": 0
+    },
+    {
+      "id": "duplicate-service",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "order_sequence"
+      ],
+      "value": [
+        "O004",
+        "O004"
+      ]
+    },
+    {
+      "id": "unknown-route-field",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "teleport"
+      ],
+      "value": true
+    },
+    {
+      "id": "temporal-segments-null",
+      "base": "S4",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "temporal_segments"
+      ],
+      "value": null
+    },
+    {
+      "id": "temporal-reverse",
+      "base": "S4",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "temporal_segments",
+        0,
+        "end_us"
+      ],
+      "value": 0
+    },
+    {
+      "id": "null-forecast",
+      "base": "S2",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "forecast"
+      ],
+      "value": null
+    },
+    {
+      "id": "null-trajectory",
+      "base": "S2",
+      "valid": true,
+      "path": [
+        "accepted_trajectory"
+      ],
+      "value": null
+    },
+    {
+      "id": "job-QUEUED",
+      "kind": "job",
+      "synthetic_lifecycle_fixture": true,
+      "payload": {
+        "schema_version": "task02-m2-runtime-job-view/1",
+        "job_id": "test-job",
+        "job_status": "QUEUED",
+        "input_basis": {
+          "session_id": "test",
+          "root_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_version": "1",
+          "generation": "0",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "context_version": "test",
+          "overlay_sha256": null,
+          "build_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "business_status": null,
+        "internal_status": null,
+        "diagnostics": [],
+        "validation": {
+          "status": "NOT_RUN",
+          "valid": null
+        },
+        "coverage_evaluated": false,
+        "served_orders": [],
+        "unserved_orders": [],
+        "plan_available": false,
+        "execution_view_required": true,
+        "public_api_v1_dynamic_plan_available": false
+      },
+      "valid": true
+    },
+    {
+      "id": "job-QUEUED-validation",
+      "kind": "job",
+      "synthetic_lifecycle_fixture": true,
+      "payload": {
+        "schema_version": "task02-m2-runtime-job-view/1",
+        "job_id": "test-job",
+        "job_status": "QUEUED",
+        "input_basis": {
+          "session_id": "test",
+          "root_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_version": "1",
+          "generation": "0",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "context_version": "test",
+          "overlay_sha256": null,
+          "build_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "business_status": null,
+        "internal_status": null,
+        "diagnostics": [],
+        "validation": {
+          "status": "NOT_RUN",
+          "valid": null
+        },
+        "coverage_evaluated": false,
+        "served_orders": [],
+        "unserved_orders": [],
+        "plan_available": false,
+        "execution_view_required": true,
+        "public_api_v1_dynamic_plan_available": false
+      },
+      "path": [
+        "validation"
+      ],
+      "value": {
+        "status": "VALIDATED",
+        "valid": true
+      },
+      "valid": false
+    },
+    {
+      "id": "job-QUEUED-served_orders",
+      "kind": "job",
+      "synthetic_lifecycle_fixture": true,
+      "payload": {
+        "schema_version": "task02-m2-runtime-job-view/1",
+        "job_id": "test-job",
+        "job_status": "QUEUED",
+        "input_basis": {
+          "session_id": "test",
+          "root_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_version": "1",
+          "generation": "0",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "context_version": "test",
+          "overlay_sha256": null,
+          "build_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "business_status": null,
+        "internal_status": null,
+        "diagnostics": [],
+        "validation": {
+          "status": "NOT_RUN",
+          "valid": null
+        },
+        "coverage_evaluated": false,
+        "served_orders": [],
+        "unserved_orders": [],
+        "plan_available": false,
+        "execution_view_required": true,
+        "public_api_v1_dynamic_plan_available": false
+      },
+      "path": [
+        "served_orders"
+      ],
+      "value": [
+        "O1"
+      ],
+      "valid": false
+    },
+    {
+      "id": "job-QUEUED-business_status",
+      "kind": "job",
+      "synthetic_lifecycle_fixture": true,
+      "payload": {
+        "schema_version": "task02-m2-runtime-job-view/1",
+        "job_id": "test-job",
+        "job_status": "QUEUED",
+        "input_basis": {
+          "session_id": "test",
+          "root_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_version": "1",
+          "generation": "0",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "context_version": "test",
+          "overlay_sha256": null,
+          "build_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "business_status": null,
+        "internal_status": null,
+        "diagnostics": [],
+        "validation": {
+          "status": "NOT_RUN",
+          "valid": null
+        },
+        "coverage_evaluated": false,
+        "served_orders": [],
+        "unserved_orders": [],
+        "plan_available": false,
+        "execution_view_required": true,
+        "public_api_v1_dynamic_plan_available": false
+      },
+      "path": [
+        "business_status"
+      ],
+      "value": "PARTIAL",
+      "valid": false
+    },
+    {
+      "id": "job-RUNNING",
+      "kind": "job",
+      "synthetic_lifecycle_fixture": true,
+      "payload": {
+        "schema_version": "task02-m2-runtime-job-view/1",
+        "job_id": "test-job",
+        "job_status": "RUNNING",
+        "input_basis": {
+          "session_id": "test",
+          "root_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_version": "1",
+          "generation": "0",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "context_version": "test",
+          "overlay_sha256": null,
+          "build_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "business_status": null,
+        "internal_status": null,
+        "diagnostics": [],
+        "validation": {
+          "status": "NOT_RUN",
+          "valid": null
+        },
+        "coverage_evaluated": false,
+        "served_orders": [],
+        "unserved_orders": [],
+        "plan_available": false,
+        "execution_view_required": true,
+        "public_api_v1_dynamic_plan_available": false
+      },
+      "valid": true
+    },
+    {
+      "id": "job-RUNNING-validation",
+      "kind": "job",
+      "synthetic_lifecycle_fixture": true,
+      "payload": {
+        "schema_version": "task02-m2-runtime-job-view/1",
+        "job_id": "test-job",
+        "job_status": "RUNNING",
+        "input_basis": {
+          "session_id": "test",
+          "root_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_version": "1",
+          "generation": "0",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "context_version": "test",
+          "overlay_sha256": null,
+          "build_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "business_status": null,
+        "internal_status": null,
+        "diagnostics": [],
+        "validation": {
+          "status": "NOT_RUN",
+          "valid": null
+        },
+        "coverage_evaluated": false,
+        "served_orders": [],
+        "unserved_orders": [],
+        "plan_available": false,
+        "execution_view_required": true,
+        "public_api_v1_dynamic_plan_available": false
+      },
+      "path": [
+        "validation"
+      ],
+      "value": {
+        "status": "VALIDATED",
+        "valid": true
+      },
+      "valid": false
+    },
+    {
+      "id": "job-RUNNING-served_orders",
+      "kind": "job",
+      "synthetic_lifecycle_fixture": true,
+      "payload": {
+        "schema_version": "task02-m2-runtime-job-view/1",
+        "job_id": "test-job",
+        "job_status": "RUNNING",
+        "input_basis": {
+          "session_id": "test",
+          "root_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_version": "1",
+          "generation": "0",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "context_version": "test",
+          "overlay_sha256": null,
+          "build_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "business_status": null,
+        "internal_status": null,
+        "diagnostics": [],
+        "validation": {
+          "status": "NOT_RUN",
+          "valid": null
+        },
+        "coverage_evaluated": false,
+        "served_orders": [],
+        "unserved_orders": [],
+        "plan_available": false,
+        "execution_view_required": true,
+        "public_api_v1_dynamic_plan_available": false
+      },
+      "path": [
+        "served_orders"
+      ],
+      "value": [
+        "O1"
+      ],
+      "valid": false
+    },
+    {
+      "id": "job-RUNNING-business_status",
+      "kind": "job",
+      "synthetic_lifecycle_fixture": true,
+      "payload": {
+        "schema_version": "task02-m2-runtime-job-view/1",
+        "job_id": "test-job",
+        "job_status": "RUNNING",
+        "input_basis": {
+          "session_id": "test",
+          "root_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_version": "1",
+          "generation": "0",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "context_version": "test",
+          "overlay_sha256": null,
+          "build_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "business_status": null,
+        "internal_status": null,
+        "diagnostics": [],
+        "validation": {
+          "status": "NOT_RUN",
+          "valid": null
+        },
+        "coverage_evaluated": false,
+        "served_orders": [],
+        "unserved_orders": [],
+        "plan_available": false,
+        "execution_view_required": true,
+        "public_api_v1_dynamic_plan_available": false
+      },
+      "path": [
+        "business_status"
+      ],
+      "value": "PARTIAL",
+      "valid": false
+    },
+    {
+      "id": "job-FAILED",
+      "kind": "job",
+      "synthetic_lifecycle_fixture": true,
+      "payload": {
+        "schema_version": "task02-m2-runtime-job-view/1",
+        "job_id": "test-job",
+        "job_status": "FAILED",
+        "input_basis": {
+          "session_id": "test",
+          "root_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_version": "1",
+          "generation": "0",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "context_version": "test",
+          "overlay_sha256": null,
+          "build_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "business_status": null,
+        "internal_status": null,
+        "diagnostics": [
+          {
+            "severity": "ERROR",
+            "code": "JOB_CANCELLED",
+            "path": "job_id",
+            "message": "synthetic cancellation consumer test"
+          }
+        ],
+        "validation": {
+          "status": "NOT_RUN",
+          "valid": null
+        },
+        "coverage_evaluated": false,
+        "served_orders": [],
+        "unserved_orders": [],
+        "plan_available": false,
+        "execution_view_required": true,
+        "public_api_v1_dynamic_plan_available": false
+      },
+      "valid": true
+    },
+    {
+      "id": "job-FAILED-validation",
+      "kind": "job",
+      "synthetic_lifecycle_fixture": true,
+      "payload": {
+        "schema_version": "task02-m2-runtime-job-view/1",
+        "job_id": "test-job",
+        "job_status": "FAILED",
+        "input_basis": {
+          "session_id": "test",
+          "root_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_version": "1",
+          "generation": "0",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "context_version": "test",
+          "overlay_sha256": null,
+          "build_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "business_status": null,
+        "internal_status": null,
+        "diagnostics": [
+          {
+            "severity": "ERROR",
+            "code": "JOB_CANCELLED",
+            "path": "job_id",
+            "message": "synthetic cancellation consumer test"
+          }
+        ],
+        "validation": {
+          "status": "NOT_RUN",
+          "valid": null
+        },
+        "coverage_evaluated": false,
+        "served_orders": [],
+        "unserved_orders": [],
+        "plan_available": false,
+        "execution_view_required": true,
+        "public_api_v1_dynamic_plan_available": false
+      },
+      "path": [
+        "validation"
+      ],
+      "value": {
+        "status": "VALIDATED",
+        "valid": true
+      },
+      "valid": false
+    },
+    {
+      "id": "job-FAILED-served_orders",
+      "kind": "job",
+      "synthetic_lifecycle_fixture": true,
+      "payload": {
+        "schema_version": "task02-m2-runtime-job-view/1",
+        "job_id": "test-job",
+        "job_status": "FAILED",
+        "input_basis": {
+          "session_id": "test",
+          "root_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_version": "1",
+          "generation": "0",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "context_version": "test",
+          "overlay_sha256": null,
+          "build_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "business_status": null,
+        "internal_status": null,
+        "diagnostics": [
+          {
+            "severity": "ERROR",
+            "code": "JOB_CANCELLED",
+            "path": "job_id",
+            "message": "synthetic cancellation consumer test"
+          }
+        ],
+        "validation": {
+          "status": "NOT_RUN",
+          "valid": null
+        },
+        "coverage_evaluated": false,
+        "served_orders": [],
+        "unserved_orders": [],
+        "plan_available": false,
+        "execution_view_required": true,
+        "public_api_v1_dynamic_plan_available": false
+      },
+      "path": [
+        "served_orders"
+      ],
+      "value": [
+        "O1"
+      ],
+      "valid": false
+    },
+    {
+      "id": "job-FAILED-business_status",
+      "kind": "job",
+      "synthetic_lifecycle_fixture": true,
+      "payload": {
+        "schema_version": "task02-m2-runtime-job-view/1",
+        "job_id": "test-job",
+        "job_status": "FAILED",
+        "input_basis": {
+          "session_id": "test",
+          "root_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_version": "1",
+          "generation": "0",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "context_version": "test",
+          "overlay_sha256": null,
+          "build_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "business_status": null,
+        "internal_status": null,
+        "diagnostics": [
+          {
+            "severity": "ERROR",
+            "code": "JOB_CANCELLED",
+            "path": "job_id",
+            "message": "synthetic cancellation consumer test"
+          }
+        ],
+        "validation": {
+          "status": "NOT_RUN",
+          "valid": null
+        },
+        "coverage_evaluated": false,
+        "served_orders": [],
+        "unserved_orders": [],
+        "plan_available": false,
+        "execution_view_required": true,
+        "public_api_v1_dynamic_plan_available": false
+      },
+      "path": [
+        "business_status"
+      ],
+      "value": "PARTIAL",
+      "valid": false
+    },
+    {
+      "id": "job-FEASIBLE",
+      "kind": "job",
+      "synthetic_lifecycle_fixture": true,
+      "payload": {
+        "schema_version": "task02-m2-runtime-job-view/1",
+        "job_id": "test-job",
+        "job_status": "COMPLETED",
+        "input_basis": {
+          "session_id": "test",
+          "root_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_version": "1",
+          "generation": "0",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "context_version": "test",
+          "overlay_sha256": null,
+          "build_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "business_status": "FEASIBLE",
+        "internal_status": "FEASIBLE",
+        "diagnostics": [],
+        "validation": {
+          "status": "VALIDATED",
+          "valid": true,
+          "validator_version": "synthetic-test-only"
+        },
+        "coverage_evaluated": true,
+        "served_orders": [
+          "O1"
+        ],
+        "unserved_orders": [],
+        "plan_available": true,
+        "execution_view_required": true,
+        "public_api_v1_dynamic_plan_available": false
+      },
+      "valid": true
+    },
+    {
+      "id": "job-PARTIAL",
+      "kind": "job",
+      "synthetic_lifecycle_fixture": true,
+      "payload": {
+        "schema_version": "task02-m2-runtime-job-view/1",
+        "job_id": "test-job",
+        "job_status": "COMPLETED",
+        "input_basis": {
+          "session_id": "test",
+          "root_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_version": "1",
+          "generation": "0",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "context_version": "test",
+          "overlay_sha256": null,
+          "build_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "business_status": "PARTIAL",
+        "internal_status": "PARTIAL",
+        "diagnostics": [],
+        "validation": {
+          "status": "VALIDATED",
+          "valid": true,
+          "validator_version": "synthetic-test-only"
+        },
+        "coverage_evaluated": true,
+        "served_orders": [
+          "O1"
+        ],
+        "unserved_orders": [
+          {
+            "order_id": "O2",
+            "reason": "NOT_SERVED_BY_FOUND_WITNESS"
+          }
+        ],
+        "plan_available": true,
+        "execution_view_required": true,
+        "public_api_v1_dynamic_plan_available": false
+      },
+      "valid": true
+    },
+    {
+      "id": "job-RETURN_ONLY",
+      "kind": "job",
+      "synthetic_lifecycle_fixture": true,
+      "payload": {
+        "schema_version": "task02-m2-runtime-job-view/1",
+        "job_id": "test-job",
+        "job_status": "COMPLETED",
+        "input_basis": {
+          "session_id": "test",
+          "root_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_version": "1",
+          "generation": "0",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "context_version": "test",
+          "overlay_sha256": null,
+          "build_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "business_status": "UNSUPPORTED",
+        "internal_status": "RETURN_ONLY",
+        "diagnostics": [],
+        "validation": {
+          "status": "VALIDATED",
+          "valid": true,
+          "validator_version": "synthetic-test-only"
+        },
+        "coverage_evaluated": true,
+        "served_orders": [],
+        "unserved_orders": [],
+        "plan_available": true,
+        "execution_view_required": true,
+        "public_api_v1_dynamic_plan_available": false
+      },
+      "valid": true
+    },
+    {
+      "id": "job-NO_SERVICE",
+      "kind": "job",
+      "synthetic_lifecycle_fixture": true,
+      "payload": {
+        "schema_version": "task02-m2-runtime-job-view/1",
+        "job_id": "test-job",
+        "job_status": "COMPLETED",
+        "input_basis": {
+          "session_id": "test",
+          "root_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_version": "1",
+          "generation": "0",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "context_version": "test",
+          "overlay_sha256": null,
+          "build_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "business_status": "UNSUPPORTED",
+        "internal_status": "NO_SERVICE",
+        "diagnostics": [
+          {
+            "severity": "ERROR",
+            "code": "NO_SERVICE",
+            "path": "plan",
+            "message": "explicitly synthetic portable no-witness test"
+          }
+        ],
+        "validation": {
+          "status": "NOT_RUN",
+          "valid": null
+        },
+        "coverage_evaluated": false,
+        "served_orders": [],
+        "unserved_orders": [],
+        "plan_available": false,
+        "execution_view_required": true,
+        "public_api_v1_dynamic_plan_available": false
+      },
+      "valid": true
+    },
+    {
+      "id": "job-TIME_LIMIT",
+      "kind": "job",
+      "synthetic_lifecycle_fixture": true,
+      "payload": {
+        "schema_version": "task02-m2-runtime-job-view/1",
+        "job_id": "test-job",
+        "job_status": "COMPLETED",
+        "input_basis": {
+          "session_id": "test",
+          "root_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "head_version": "1",
+          "generation": "0",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "context_version": "test",
+          "overlay_sha256": null,
+          "build_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "business_status": "TIME_LIMIT",
+        "internal_status": "TIME_LIMIT",
+        "diagnostics": [
+          {
+            "severity": "ERROR",
+            "code": "TIME_LIMIT",
+            "path": "plan",
+            "message": "explicitly synthetic portable no-witness test"
+          }
+        ],
+        "validation": {
+          "status": "NOT_RUN",
+          "valid": null
+        },
+        "coverage_evaluated": false,
+        "served_orders": [],
+        "unserved_orders": [],
+        "plan_available": false,
+        "execution_view_required": true,
+        "public_api_v1_dynamic_plan_available": false
+      },
+      "valid": true
+    },
+    {
+      "id": "temporal-overlay_sha256-0",
+      "base": "S4",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "overlay_sha256"
+      ],
+      "value": [],
+      "expected_diagnostic": {
+        "code": "INVALID_DATA",
+        "path": "accepted_trajectory.vehicle_routes[0].actions[0].overlay_sha256"
+      }
+    },
+    {
+      "id": "temporal-overlay_sha256-1",
+      "base": "S4",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "overlay_sha256"
+      ],
+      "value": {},
+      "expected_diagnostic": {
+        "code": "INVALID_DATA",
+        "path": "accepted_trajectory.vehicle_routes[0].actions[0].overlay_sha256"
+      }
+    },
+    {
+      "id": "temporal-overlay_sha256-2",
+      "base": "S4",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "overlay_sha256"
+      ],
+      "value": 42,
+      "expected_diagnostic": {
+        "code": "INVALID_DATA",
+        "path": "accepted_trajectory.vehicle_routes[0].actions[0].overlay_sha256"
+      }
+    },
+    {
+      "id": "temporal-overlay_sha256-3",
+      "base": "S4",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "overlay_sha256"
+      ],
+      "value": true,
+      "expected_diagnostic": {
+        "code": "INVALID_DATA",
+        "path": "accepted_trajectory.vehicle_routes[0].actions[0].overlay_sha256"
+      }
+    },
+    {
+      "id": "temporal-overlay_sha256-4",
+      "base": "S4",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "overlay_sha256"
+      ],
+      "value": null,
+      "expected_diagnostic": {
+        "code": "INVALID_DATA",
+        "path": "accepted_trajectory.vehicle_routes[0].actions[0].overlay_sha256"
+      }
+    },
+    {
+      "id": "temporal-overlay_sha256-5",
+      "base": "S4",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "overlay_sha256"
+      ],
+      "value": "bad",
+      "expected_diagnostic": {
+        "code": "INVALID_DATA",
+        "path": "accepted_trajectory.vehicle_routes[0].actions[0].overlay_sha256"
+      }
+    },
+    {
+      "id": "temporal-overlay_sha256-6",
+      "base": "S4",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "overlay_sha256"
+      ],
+      "value": "",
+      "expected_diagnostic": {
+        "code": "INVALID_DATA",
+        "path": "accepted_trajectory.vehicle_routes[0].actions[0].overlay_sha256"
+      }
+    },
+    {
+      "id": "temporal-temporal_policy-0",
+      "base": "S4",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "temporal_policy"
+      ],
+      "value": [],
+      "expected_diagnostic": {
+        "code": "INVALID_DATA",
+        "path": "accepted_trajectory.vehicle_routes[0].actions[0].temporal_policy"
+      }
+    },
+    {
+      "id": "temporal-temporal_policy-1",
+      "base": "S4",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "temporal_policy"
+      ],
+      "value": {},
+      "expected_diagnostic": {
+        "code": "INVALID_DATA",
+        "path": "accepted_trajectory.vehicle_routes[0].actions[0].temporal_policy"
+      }
+    },
+    {
+      "id": "temporal-temporal_policy-2",
+      "base": "S4",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "temporal_policy"
+      ],
+      "value": 42,
+      "expected_diagnostic": {
+        "code": "INVALID_DATA",
+        "path": "accepted_trajectory.vehicle_routes[0].actions[0].temporal_policy"
+      }
+    },
+    {
+      "id": "temporal-temporal_policy-3",
+      "base": "S4",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "temporal_policy"
+      ],
+      "value": true,
+      "expected_diagnostic": {
+        "code": "INVALID_DATA",
+        "path": "accepted_trajectory.vehicle_routes[0].actions[0].temporal_policy"
+      }
+    },
+    {
+      "id": "temporal-temporal_policy-4",
+      "base": "S4",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "temporal_policy"
+      ],
+      "value": null,
+      "expected_diagnostic": {
+        "code": "INVALID_DATA",
+        "path": "accepted_trajectory.vehicle_routes[0].actions[0].temporal_policy"
+      }
+    },
+    {
+      "id": "temporal-temporal_policy-5",
+      "base": "S4",
+      "valid": false,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "temporal_policy"
+      ],
+      "value": "",
+      "expected_diagnostic": {
+        "code": "INVALID_DATA",
+        "path": "accepted_trajectory.vehicle_routes[0].actions[0].temporal_policy"
+      }
+    },
+    {
+      "id": "temporal-overlay_sha256-absent",
+      "base": "S4",
+      "valid": true,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "overlay_sha256"
+      ],
+      "remove": true
+    },
+    {
+      "id": "temporal-overlay_sha256-valid",
+      "base": "S4",
+      "valid": true,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "overlay_sha256"
+      ],
+      "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "id": "temporal-temporal_policy-absent",
+      "base": "S4",
+      "valid": true,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "temporal_policy"
+      ],
+      "remove": true
+    },
+    {
+      "id": "temporal-temporal_policy-valid",
+      "base": "S4",
+      "valid": true,
+      "path": [
+        "accepted_trajectory",
+        "vehicle_routes",
+        0,
+        "actions",
+        0,
+        "temporal_policy"
+      ],
+      "value": "future-compatible-policy"
+    }
+  ]
+}

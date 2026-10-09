@@ -1,0 +1,15 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"task02-m2-runtime-response/1",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema_version","command_id","status","value","diagnostics"],
+  "properties":{
+    "schema_version":{"const":"task02-m2-runtime-response/1"},
+    "command_id":{"type":["string","null"]},
+    "status":{"enum":["OK","FAIL"]},
+    "value":{},
+    "diagnostics":{"type":"array","items":{"type":"object","required":["severity","code","path","message"],"properties":{"severity":{"const":"ERROR"},"code":{"type":"string","minLength":1},"path":{"type":"string","minLength":1},"message":{"type":"string","minLength":1}}}}
+  },
+  "allOf":[{"if":{"properties":{"status":{"const":"FAIL"}}},"then":{"properties":{"value":{"type":"null"},"diagnostics":{"minItems":1}}}}]
+}

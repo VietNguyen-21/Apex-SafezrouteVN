@@ -18,8 +18,3 @@ Rules:
 - Do not edit another member's ownership area.
 - shared/ and configs/ require coordination.
 - DONE != INTEGRATED.
-
-Member 1 implementation:
-
-- [Member 1 guide: setup, pipeline, realtime, handoff and data contract](docs/member1_runbook.md)
-- [Geo data module](geo_data/README.md)

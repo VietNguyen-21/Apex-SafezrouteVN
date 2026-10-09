@@ -1,0 +1,35 @@
+{
+  "note": "Transport-only examples. These are not historical persisted HTTP jobs or solver runs.",
+  "queued": {
+    "schema_version": "task02-m2-m3m4-job/1",
+    "kind": "DECISION_JOB",
+    "request_id": "example-lifecycle",
+    "run_id": "CONTRACT_EXAMPLE_JOB_1",
+    "job_status": "QUEUED",
+    "decision": null,
+    "failure": null
+  },
+  "running": {
+    "schema_version": "task02-m2-m3m4-job/1",
+    "kind": "DECISION_JOB",
+    "request_id": "example-lifecycle",
+    "run_id": "CONTRACT_EXAMPLE_JOB_1",
+    "job_status": "RUNNING",
+    "decision": null,
+    "failure": null
+  },
+  "failed": {
+    "schema_version": "task02-m2-m3m4-job/1",
+    "kind": "DECISION_JOB",
+    "request_id": "example-lifecycle",
+    "run_id": "CONTRACT_EXAMPLE_JOB_1",
+    "job_status": "FAILED",
+    "decision": null,
+    "failure": {
+      "severity": "ERROR",
+      "code": "INTERNAL_ERROR",
+      "path": "job",
+      "message": "A system failure prevented construction or validation of a decision."
+    }
+  }
+}
