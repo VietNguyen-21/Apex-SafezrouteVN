@@ -1,0 +1,33 @@
+{
+  "schema_version": "task02-m1-profile-config/1",
+  "policy_version": "task02-m1-profile-policy/1",
+  "normalization_version": "task02-m1-common-benchmark-normalization/1",
+  "score_scale": 1000000,
+  "rounding": "ROUND_HALF_UP",
+  "production_calibrated": false,
+  "references": {
+    "travel_time_s": 7911.17435157269,
+    "distance_m": 49796.995379420696,
+    "relative_exposure_proxy": 16.2080775839896
+  },
+  "profiles": {
+    "FASTEST": {"time": 1.0, "risk": 0.0, "distance": 0.0, "tie_break": ["distance", "risk"]},
+    "BALANCED": {"time": 0.6, "risk": 0.4, "distance": 0.0, "tie_break": ["time", "risk", "distance"]},
+    "SAFER": {"time": 0.0, "risk": 1.0, "distance": 0.0, "tie_break": ["time", "distance"]}
+  },
+  "limits": {"master_seconds": 60.0, "num_search_workers": 1, "random_seed": 0},
+  "domain_limits": {
+    "domain_seconds": 600.0,
+    "per_query_seconds": 15.0,
+    "max_proposals": 96,
+    "max_columns": 512,
+    "max_road_states": 250000,
+    "max_road_labels": 500000,
+    "max_arrival_options": 8
+  },
+  "trusted_s1": {
+    "run_id": "S1_ORTOOLS_STATIC_20261001T135318224322Z",
+    "manifest_sha256": "6e614a95d75a96554c591ce6e2a4931d6bbf70efea579297b50a298f5f5fc3ef",
+    "solution_sha256": "18d89440fd96e7fbf4f8a5dc07ed1c55052e29b77ee34e68cf77ab99edce1d8c"
+  }
+}

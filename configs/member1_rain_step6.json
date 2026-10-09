@@ -1,0 +1,17 @@
+{
+  "schema_version": "task02-m1-temporal-rain-config/1",
+  "temporal_policy": "task02-m1-temporal-edge-piecewise-rate/1",
+  "traffic_policy": "frozen-decision-epoch",
+  "expiry_policy": "SYNTHETIC_RETURN_TO_PINNED_BASELINE",
+  "profile_config_sha256": "6d2dbd9b743a735e35a9f895ccfb653c26622893ef85bd4dffc914ce801438a8",
+  "limits": {
+    "domain_seconds": 600.0,
+    "per_query_seconds": 15.0,
+    "max_road_states": 250000,
+    "max_road_labels": 500000,
+    "max_arrival_options": 2,
+    "max_proposals": 96,
+    "max_columns": 512,
+    "master_seconds": 60.0
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "task02-m1-dynamic-step5/2",
+  "description": "Internal only. Structural checks are not a source/physics certificate. Legacy API v1 is unchanged. Checker /2 binds method versions and forecast scope; /1 historical methods remain explicitly readable under stricter validation.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/state"
+    },
+    {
+      "$ref": "#/$defs/transition"
+    },
+    {
+      "$ref": "#/$defs/result"
+    }
+  ],
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "state": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "scenario_id",
+        "head_version",
+        "current_time",
+        "orders",
+        "vehicles",
+        "execution_history",
+        "content_sha256"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "task02-m1-dynamic-state/1"
+        },
+        "scenario_id": {
+          "enum": [
+            "S2",
+            "S3"
+          ]
+        },
+        "head_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "current_time": {
+          "type": "string",
+          "pattern": "\\+07:00$"
+        },
+        "orders": {
+          "type": "array"
+        },
+        "vehicles": {
+          "type": "array"
+        },
+        "execution_history": {
+          "type": "array"
+        },
+        "content_sha256": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    },
+    "transition": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "status",
+        "before_version",
+        "after_version",
+        "event_sha256",
+        "after_state"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "task02-m1-event-transition/1"
+        },
+        "status": {
+          "const": "APPLIED"
+        },
+        "before_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "after_version": {
+          "type": "integer",
+          "minimum": 2
+        },
+        "event_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "after_state": {
+          "$ref": "#/$defs/state"
+        }
+      }
+    },
+    "result": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "status",
+        "scenario_id",
+        "profile",
+        "domain_sha256",
+        "served_orders",
+        "unserved_orders",
+        "vehicle_routes",
+        "search",
+        "metrics",
+        "solver_version",
+        "objective_version",
+        "post_event_state",
+        "metric_scope",
+        "actual_delivered",
+        "planned_served",
+        "initial_state_sha256"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "task02-m1-dynamic-result/2"
+        },
+        "status": {
+          "enum": [
+            "FEASIBLE",
+            "PARTIAL",
+            "NO_SERVICE",
+            "SEARCH_LIMIT",
+            "TIME_LIMIT"
+          ]
+        },
+        "profile": {
+          "enum": [
+            "FASTEST",
+            "BALANCED",
+            "SAFER"
+          ]
+        },
+        "domain_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "served_orders": {
+          "$ref": "#/$defs/ids"
+        },
+        "unserved_orders": {
+          "type": "array"
+        },
+        "vehicle_routes": {
+          "type": "array"
+        },
+        "search": {
+          "type": "object",
+          "required": [
+            "search_complete",
+            "optimality_proven",
+            "truncated",
+            "master"
+          ],
+          "properties": {
+            "search_complete": {
+              "const": false
+            },
+            "optimality_proven": {
+              "const": false
+            },
+            "truncated": {
+              "const": true
+            }
+          }
+        },
+        "metrics": {
+          "type": "object"
+        },
+        "solver_version": {
+          "enum": [
+            "task02-m1-dynamic-turn-route-columns/1",
+            "task02-m1-dynamic-turn-route-columns/2"
+          ]
+        },
+        "objective_version": {
+          "const": "task02-m1-dynamic-objective/1"
+        },
+        "post_event_state": {
+          "type": "null"
+        },
+        "metric_scope": {
+          "const": "SUFFIX_ONLY"
+        },
+        "actual_delivered": {
+          "$ref": "#/$defs/ids"
+        },
+        "planned_served": {
+          "$ref": "#/$defs/ids"
+        },
+        "initial_state_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "whole_trajectory_metrics": {
+          "type": "object"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "SEARCH_LIMIT",
+                  "TIME_LIMIT"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "vehicle_routes": {
+                "maxItems": 0
+              },
+              "served_orders": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

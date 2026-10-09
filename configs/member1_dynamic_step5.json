@@ -1,0 +1,23 @@
+{
+  "schema_version": "task02-m1-dynamic-objective-config/1",
+  "objective_version": "task02-m1-dynamic-objective/1",
+  "lexicographic_order": ["served_count", "priority_sum", "soft_completion_lateness", "locked_profile_score", "locked_profile_ties", "plan_key"],
+  "profile_config_sha256": "6d2dbd9b743a735e35a9f895ccfb653c26622893ef85bd4dffc914ce801438a8",
+  "pickup_dwell_seconds": 0,
+  "urgent_ready_at_event": "SYNTHETIC_LEADER_ASSUMPTION",
+  "split_delivery": false,
+  "unload_or_transfer": false,
+  "production_calibrated": false,
+  "limits": {
+    "domain_seconds": 600.0,
+    "per_query_seconds": 15.0,
+    "max_road_states": 250000,
+    "max_road_labels": 500000,
+    "max_arrival_options": 2,
+    "max_proposals": 96,
+    "max_columns": 512,
+    "master_seconds": 60.0
+  },
+  "scaling": {"physical_time": "CEILING_MICROSECOND", "late": "CEILING_MILLISECOND", "travel": "CEILING_MILLISECOND", "distance": "CEILING_MILLIMETER", "risk": "CEILING_1E6", "profile": "LOCKED_HALF_UP_1E6"},
+  "model_scope": "FINITE_TURN_STATE_ROUTE_COLUMNS; NO_GLOBAL_OPTIMALITY_PROOF"
+}

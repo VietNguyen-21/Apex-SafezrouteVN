@@ -4,3 +4,16 @@ __pycache__/
 .pytest_cache/
 scenarios/cached_context/*
 !scenarios/cached_context/.gitkeep
+
+node_modules/
+dist/
+dist-mock/
+coverage/
+outputs/
+releases/
+.agents/
+.codex/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
